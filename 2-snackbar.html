@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snack Bar</title>
-    <script type="module" crossorigin src="/goit-js-hw-10/assets/styles-DD3qoKza.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/styles-DvPDDfy5.css">
+    <script type="module" crossorigin src="/goit-js-hw-10/2-snackbar.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/styles-Df5NwrJk.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-BbbuE1sJ.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/styles-CPR2G_7X.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/vendor-CZjNVMTf.css">
   </head>
   <body>
     <header class="header">
@@ -37,6 +40,26 @@
           <span class="main-title-gradient">Snack bar</span>
         </h1>
       </div>
+      <form class="form">
+        <label>
+          Delay (ms)
+          <input type="number" name="delay" required />
+        </label>
+
+        <fieldset>
+          <legend>State</legend>
+          <label>
+            <input type="radio" name="state" value="fulfilled" required />
+            Fulfilled
+          </label>
+          <label>
+            <input type="radio" name="state" value="rejected" required />
+            Rejected
+          </label>
+        </fieldset>
+
+        <button type="submit">Create notification</button>
+      </form>
     </main>
   </body>
 </html>
