@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  gap: 20px;
+  margin: 0 auto;
+}
+fieldset {
+  display: flex;
+
+  flex-direction: row;
+  width: 220px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+button {
+  width: 250px;
+}

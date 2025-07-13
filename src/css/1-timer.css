@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  background: #f0f0f0;
+}
+
+#datetime-picker {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button[data-start] {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.timer {
+  display: flex;
+  justify-content: center; /* Вирівнювання по центру контейнера */
+  gap: 30px; /* Відстань між елементами (колонками) */
+  text-align: center; /* Центрування тексту всередині полів */
+  font-family: Arial, sans-serif; /* Вибір простого, чистого шрифту */
+  color: #333; /* Темний колір тексту */
+  margin-top: 50px; /* Додати трохи відступу зверху */
+}
+
+.field {
+  display: flex;
+  flex-direction: column; /* Розміщення елементів один під одним */
+  align-items: center; /* Центрування елементів по горизонталі */
+}
+
+/* Стилі для великих значень (00) */
+.value {
+  font-size: 3.5rem; /* Великий розмір шрифту */
+  font-weight: 400; /* Жирний шрифт */
+  line-height: 1; /* Зменшення міжрядкового інтервалу */
+}
+
+/* Стилі для міток (Days, Hours) */
+.label {
+  font-size: 1rem; /* Менший розмір шрифту */
+  font-weight: 500; /* Звичайний шрифт */
+  text-transform: uppercase; /* Перетворення тексту у великі літери */
+  margin-top: 5px; /* Невеликий відступ між значенням та міткою */
+}
+button {
+}
+button.active {
+}
