@@ -19,6 +19,7 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+
   onClose(selectedDates) {
     const selected = selectedDates[0];
     if (selected <= new Date()) {
@@ -45,36 +46,47 @@ class Timer {
 
   start() {
     if (this.isActive) {
-      clearInterval(this.convertMs(0));
-      this.isActive = false;
-      input.disabled = false;
-      btn.textContent = 'Start';
-      input.value = '';
-      startTime = null;
-      btn.disabled = true;
+      this.reset();
       return;
     }
 
+    const currentTime = Date.now();
+    const deltaTime = startTime - currentTime;
+
+    if (deltaTime <= 0) return;
+
     this.isActive = true;
     btn.textContent = 'Reset';
-    btn.disabled = false;
     input.disabled = true;
 
     this.interval = setInterval(() => {
-      const currentTime = Date.now();
-      const deltaTime = startTime - currentTime;
-      if (deltaTime <= 0) {
+      const now = Date.now();
+      const remaining = startTime - now;
+
+      if (remaining <= 0) {
         clearInterval(this.interval);
         this.onTick(this.convertMs(0));
+        this.isActive = false;
         btn.textContent = 'Start';
         input.disabled = false;
         return;
       }
 
-      const time = this.convertMs(deltaTime);
+      const time = this.convertMs(remaining);
       this.onTick(time);
     }, 1000);
   }
+  reset() {
+    clearInterval(this.interval);
+    this.isActive = false;
+    this.onTick(this.convertMs(0));
+    input.disabled = false;
+    input.value = '';
+    btn.textContent = 'Start';
+    btn.disabled = true;
+    startTime = null;
+  }
+
   convertMs(ms) {
     const second = 1000;
     const minute = second * 60;
